@@ -21,18 +21,7 @@
 
         <p>We'll use the <em>Business News</em> plugin.</p>
 
-        <span id="install-plugin" class="interactive" data-targetaction="sequence" data-reftarget="span#test1">
-            <ul>
-                <li class="interactive"
-                    data-reftarget="a[data-testid='data-testid Nav menu item'][href='/connections']"
-            </ul>
-        </span>
-        
-        <h2>Step 2: Create a Datasource</h2>
-
-        <p>A datasource lets us specify which feed we want to use, so we can query it in a dashboard.</p>
-
-        <span id="test1" class="interactive" data-targetaction="sequence" data-reftarget="span#test1"> 
+        <span id="install-plugin" class="interactive" data-targetaction="sequence" data-reftarget="span#test1"> 
             <ul>
               <li class="interactive" 
                   data-reftarget="a[data-testid='data-testid Nav menu item'][href='/admin/plugins']"
@@ -56,6 +45,18 @@
               </li>
             </ul>
         </span>    
+        
+        <h2>Step 2: Create a Datasource</h2>
+
+        <p>A datasource lets us specify which feed we want to use, so we can query it in a dashboard.</p>
+
+        <span id="create-datasource" class='interactive' data-targetaction='sequence' data-reftarget="span#create-datasource"
+            requirements="has-plugin(volkovlabs-rss-datasource)">
+            <ul>
+
+                
+            </ul>
+        </span>
         
         <h2>Step 3: Create a Dashboard</h2>
 
