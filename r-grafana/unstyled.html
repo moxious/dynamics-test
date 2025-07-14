@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hello</title>
+    </head>
+    <body>
+        <h1>Add the Prometheus Datasource</h1>
+        <p>This is a demo product-interactive HTML page, extracted from the Prometheus LJ</p>
+
+        <p>Grafana provides built-in support for a Prometheus data source. 
+        In this step of your journey, you add the Prometheus data source and give it a name.</p>
+
+        <p>To add the Prometheus data source, complete the following steps:</p>
+
+        <!-- An interactive one-shot block sequence -->
+        <span id="test1" class="interactive" data-targetaction="sequence" data-reftarget="span#test1"> 
+            <ul>
+              <!-- Highlight a menu item and click it -->
+              <li class="interactive" 
+                  data-reftarget="a[data-testid='data-testid Nav menu item'][href='/connections']"
+                  data-targetaction='highlight'>
+                Click Connections in the left-side menu.</li>
+              <li>
+                Under Connections, click Add new connection.</li>
+              <!-- Fill out a form item -->
+              <li class="interactive" data-reftarget="input[type='text']"
+                data-targetaction='formfill' data-targetvalue='Prometheus'>
+                Enter Prometheus in the search bar.</li>
+              <!-- Highlight a menu item and click it -->
+              <li class="interactive" 
+                  data-reftarget="a[href='/connections/datasources/prometheus']"
+                  data-targetaction='highlight'>
+                Click Prometheus data source.</li>
+              <!-- n.b. sometimes semantic HTML is insufficient to locate a button.
+                   So we have the 'button' interactive primitive that finds any button
+                   element whose text is reftarget -->
+              <li class="interactive"
+                  data-reftarget="Add new data source"
+                  data-targetaction='button'>
+                Click Add new data source in the upper right.
+              </li>
+            </ul>
+        </span>    
+    </body>
+</html>
+
