@@ -21,9 +21,9 @@
 
         <p>We'll use the <em>Business News</em> plugin.</p>
 
-        <span id="install-plugin" class="interactive" data-targetaction="sequence" data-reftarget="span#test1"> 
+        <span id="install-plugin" class="interactive" data-requirements="navmenu-open" data-targetaction="sequence" data-reftarget="span#test1"> 
             <ul>
-              <li class="interactive" 
+              <li class="interactive" data-requirements="navmenu-open"
                   data-reftarget="a[data-testid='data-testid Nav menu item'][href='/admin/plugins']"
                   data-targetaction='highlight'>
                 Click Administration &gt; Plugins &amp; Data in the left-side menu.</li>
@@ -59,6 +59,7 @@
             class="interactive" 
             data-targetaction="sequence" 
             data-reftarget="span#create-datasource"
+            data-requirements="navmenu-open"
             data-require-has-plugin="volkovlabs-rss-datasource"> 
             <ul>
               <!-- Highlight a menu item and click it -->
