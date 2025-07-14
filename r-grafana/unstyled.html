@@ -40,7 +40,12 @@
                 Click the Business News button that appears.
               </li>
 
-              <li class='interactive' data-reftarget='Install' data-targetaction='button'>
+              <li 
+                  class='interactive' 
+                  data-hint="You'll need to be logged in, and an administrator"
+                  data-requirements="is-admin"
+                  data-reftarget='Install' 
+                  data-targetaction='button'>
                 Click the Install Button
               </li>
             </ul>
@@ -82,7 +87,7 @@
               </li>
 
               <li class="interactive"
-                  data-reftarget="input#basic-settings-name"
+                  data-reftarget="input[id='basic-settings-name']"
                   data-targetaction='formfill' data-targetvalue='Reddit /r/grafana'>
                 Name the data source "Reddit /r/grafana"
               </li>
