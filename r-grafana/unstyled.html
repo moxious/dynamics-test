@@ -50,6 +50,57 @@
 
         <p>A datasource lets us specify which feed we want to use, so we can query it in a dashboard.</p>
 
+        <span id="create-datasource" 
+            class="interactive" 
+            data-targetaction="sequence" 
+            data-reftarget="span#create-datasource"
+            data-require-has-plugin="volkovlabs-rss-datasource"> 
+            <ul>
+              <!-- Highlight a menu item and click it -->
+              <li class="interactive" 
+                  data-reftarget="a[data-testid='data-testid Nav menu item'][href='/connections']"
+                  data-targetaction='highlight'>
+                Click Connections in the left-side menu.</li>
+              <li>
+                Under Connections, click Add new connection.</li>
+              <!-- Fill out a form item -->
+              <li class="interactive" data-reftarget="input[type='text']"
+                data-targetaction='formfill' data-targetvalue='Business News'>
+                Enter Business News in the search bar.</li>
+              <!-- Highlight a menu item and click it -->
+              <li class="interactive" 
+                  data-reftarget="a[href='/connections/datasources/volkovlabs-rss-datasource']"
+                  data-targetaction='highlight'>
+                Click Business News data source.</li>
+              <!-- n.b. sometimes semantic HTML is insufficient to locate a button.
+                   So we have the 'button' interactive primitive that finds any button
+                   element whose text is reftarget -->
+              <li class="interactive"
+                  data-reftarget="Add new data source"
+                  data-targetaction='button'>
+                Click Add new data source in the upper right.
+              </li>
+
+              <li class="interactive"
+                  data-reftarget="input#basic-settings-name"
+                  data-targetaction='formfill' data-targetvalue='Reddit /r/grafana'>
+                Name the data source "Reddit /r/grafana"
+              </li>
+
+              <li class="interactive"
+                  data-reftarget="input[placeholder='https://feed']"
+                  data-targetaction="formfill" data-targetvalue="https://www.reddit.com/r/grafana/.rss">
+                Input the feed URL, which is <pre>https://www.reddit.com/r/grafana/.rss</pre>
+              </li>
+
+              <li class="interactive"
+                  data-reftarget="Save and Test"
+                  data-targetaction="button">
+                Click "Save &amp Test" to save the data source.
+              </li>
+            </ul>
+        </span>    
+        
         <span id="create-datasource" class='interactive' data-targetaction='sequence' data-reftarget="span#create-datasource"
             data-require-has-plugin="volkovlabs-rss-datasource">
             <ul>
