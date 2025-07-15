@@ -96,17 +96,57 @@
               </li>
             </ul>
         </span>    
+                
+        <h2>Step 3: Create a Dashboard</h2>
+
+        <p>In this section, we'll use the datasource we created to create a visualization.</p>
         
-        <span id="create-datasource" class='interactive' data-targetaction='sequence' data-reftarget="span#create-datasource"
+        <span id="create-dashboard" class='interactive' data-targetaction='sequence' data-reftarget="span#create-dashboard"
             data-require-has-plugin="volkovlabs-rss-datasource">
             <ul>
-
-                
+              <li class="interactive" 
+                  data-reftarget="a[data-testid='data-testid Nav menu item'][href='/dashboards']"
+                  data-targetaction='highlight'>
+                Click Dashboards in the left-side menu.</li>
+              <li class="interactive"
+                  data-reftarget="New"
+                  data-targetaction="button">
+                  Click the New button
+              </li>
+              <li class="interactive"
+                  data-reftarget="a[href='/dashboard/new']"
+                  data-targetaction='highlight'>
+                  In the submenu, click "Dashboard"
+              </li>
+              <li class="interactive"
+                  data-reftarget="Add Visualization"
+                  data-targetaction="button">
+                 Click the Add Visualization Button
+              </li>
+              <li class="interactive" 
+                  data-reftarget="Reddit /r/grafana"
+                  data-targetaction="button">
+                Click the Reddit /r/grafana datasource.
+              </li>
+              <li class="interactive"
+                  data-reftarget="button[aria-label='Change Visualization']"
+                  data-targetaction='highlight'>
+                  Click on the Visualization type
+              </li>
+              <li class="interactive"
+                  data-reftarget="input[placeholder='Search For...']"
+                  data-targetaction="formfill"
+                  data-targetvalue="Table">
+                  Search for "Table"
+              </li>
+              <li class="interactive"
+                  data-reftarget="div[data-test-id='Plugin visualization item Table']"
+                  data-targetaction='highlight'>
+                  Click Table
+              </li>
             </ul>
         </span>
         
-        <h2>Step 3: Create a Dashboard</h2>
-
         <h2>Step 4: Basic Alerting</h2>
             
     </body>
