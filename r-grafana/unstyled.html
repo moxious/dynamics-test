@@ -113,20 +113,11 @@
                   data-targetaction='navigate'>
                   Click the New > Dashboard button"
               </li>
-              <li class="interactive" data-targetaction="multi-step">
-                <span class="interactive" data-targetaction="button" data-reftarget="Add Visualization" />
-                <span class="interactive" data-targetaction="button" data-reftarget="Business News" />
-                Click "Add Visualization" and select the Business News/Reddit /r/grafana option.
+              <li class="interactive" data-targetaction="button" data-reftarget="Add Visualization">
+                Click "Add Visualization"
               </li>
-              <li class="interactive"
-                  data-reftarget="Add Visualization"
-                  data-targetaction="button">
-                 Click the Add Visualization Button
-              </li>
-              <li class="interactive" 
-                  data-reftarget="Reddit /r/grafana"
-                  data-targetaction="button">
-                Click the Reddit /r/grafana datasource.
+              <li class="interactive" data-targetaction="button" data-reftarget="Business News">
+                Select the Business News/Reddit /r/grafana option.
               </li>
               <li class="interactive"
                   data-reftarget="button[aria-label='Change Visualization']"
@@ -144,8 +135,21 @@
                   data-targetaction='highlight'>
                   Click Table
               </li>
+              <li class="interactive" data-reftarget="Save Dashboard" data-targetaction="button">
+                 Click Save Dashboard
+              </li>
+              <li class="interactive" data-reftarget='input[type="text",aria-label="Save dashboard title field"]' 
+                  data-targetaction="formfill" data-targetvalue="Grafana News">
+                  Name the dashboard "Grafana News"
+              </li>
+
+              <li class="interactive" data-reftarget="Save" data-targetaction="button">
+                  Click Save
+              </li>
             </ul>
         </span>
+
+        <p>That's it! You've got a basic dashboard.</p>
         
         <h2>Step 4: Basic Alerting</h2>
             
