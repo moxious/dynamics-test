@@ -23,6 +23,12 @@
 
         <span id="install-plugin" class="interactive" data-requirements="navmenu-open" data-targetaction="sequence" data-reftarget="span#install-plugin"> 
             <ul>
+              <li class="interactive" data-targetaction="multi-step">
+                <span class="interactive" data-targetaction="button" data-reftarget="Add Visualization" />
+                <span class="interactive" data-targetaction="button" data-reftarget="Business News" />
+                Idempotent multi-hop
+              </li>
+                    
               <li class="interactive" data-requirements="navmenu-open"
                   data-reftarget="a[data-testid='data-testid Nav menu item'][href='/admin/plugins']"
                   data-targetaction='highlight'>
@@ -112,6 +118,11 @@
                   data-reftarget="/dashboard/new"
                   data-targetaction='navigate'>
                   Click the New > Dashboard button"
+              </li>
+              <li class="interactive" data-targetaction="multi-step">
+                <span class="interactive" data-targetaction="button" data-reftarget="Add Visualization" />
+                <span class="interactive" data-targetaction="button" data-reftarget="Business News" />
+                Click "Add Visualization" and select the Business News/Reddit /r/grafana option.
               </li>
               <li class="interactive"
                   data-reftarget="Add Visualization"
