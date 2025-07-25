@@ -29,7 +29,7 @@
                   data-targetaction="highlight"></span>
                 <span class="interactive" data-reftarget="a[href='/plugins']" data-targetaction="highlight"></span>
                 <span class="interactive" data-reftarget="input[type='text']" data-targetaction="formfill" data-targetvalue="Business News"></span>
-                Take 3 steps at once!
+                Do a 3 Step Dance Just Because
               </li>
             
               <li class="interactive" data-requirements="navmenu-open"
@@ -122,12 +122,32 @@
                   data-targetaction='navigate'>
                   Click the New > Dashboard button"
               </li>
+
+              <li class="interactive" data-targetaction="multistep">
+                 <span class="interactive" data-targetaction="button" data-reftarget="Add Visualization"></span>
+                 <span class="interactive" data-targetaction="button" data-reftarget="Business News"></span>
+                  Click "Add Visualization", Select the Business News/Reddit /r/grafana option.
+              </li>
+              <!--
               <li class="interactive" data-targetaction="button" data-reftarget="Add Visualization">
-                Click "Add Visualization"
+                Click "Add Visualization", 
               </li>
               <li class="interactive" data-targetaction="button" data-reftarget="Business News">
                 Select the Business News/Reddit /r/grafana option.
               </li>
+              -->
+
+              <li class="interactive" data-targetaction="multistep">
+                <span class="interactive"
+                  data-reftarget='button[data-testid="data-testid toggle-viz-picker"]'
+                  data-targetaction='highlight'></span>
+                <span class="interactive"
+                  data-reftarget='div[data-test-id="Plugin visualization item Table"]'
+                  data-targetaction="highlight"></span>
+                Click on the Visualization type, Search for "Table", Click Table.
+              </li>
+
+              <!--
               <li class="interactive"
                   data-reftarget='button[data-testid="data-testid toggle-viz-picker"]'
                   data-targetaction='highlight'>
@@ -141,6 +161,7 @@
                   data-targetaction='highlight'>
                   Click Table
               </li>
+              -->
               <li class="interactive" data-reftarget="Save Dashboard" data-targetaction="button">
                  Click Save Dashboard
               </li>
@@ -157,8 +178,6 @@
 
         <p>That's it! You've got a basic dashboard.</p>
         
-        <h2>Step 4: Basic Alerting</h2>
-            
     </body>
 </html>
 
