@@ -69,7 +69,7 @@
             data-targetaction="sequence" 
             data-reftarget="span#create-datasource"
             data-requirements="navmenu-open,has-plugin:volkovlabs-rss-datasource"
-            data-objective="has-datasource:volkovlabs-rss-datasource"> 
+            data-objectives="has-datasource:volkovlabs-rss-datasource"> 
             <ul>
               <!-- Highlight a menu item and click it -->
               <li class="interactive" 
@@ -110,8 +110,11 @@
 
         <p>In this section, we'll use the datasource we created to create a visualization.</p>
         
-        <span id="create-dashboard" class='interactive' data-targetaction='sequence' data-reftarget="span#create-dashboard"
-            data-require-has-plugin="volkovlabs-rss-datasource">
+        <span id="create-dashboard" 
+              class='interactive' 
+              data-targetaction='sequence' 
+              data-reftarget="span#create-dashboard"
+              data-requirements="has-datasource:volkovlabs-rss-datasource">
             <ul>
               <li class="interactive" 
                   data-reftarget="a[data-testid='data-testid Nav menu item'][href='/dashboards']"
