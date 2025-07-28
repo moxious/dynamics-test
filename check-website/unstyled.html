@@ -2,198 +2,92 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Create a Dashboard of Grafana News</title>
+        <title>Get Alerted when your Website Goes Down</title>
     </head>
     <body>
-        <h1>Make your First Dashboard</h1>
+        <h1>Get Alerted when your Website Goes Down</h1>
 
-        <p>In this tutorial, we'll make your first dashboard, of Grafana news.  To do this, we'll learn the following
-            parts of Grafana in sequence:
-         <ul>
-             <li>Installing plugins to get access to data (in our case, RSS feeds)</li>
-             <li>Creating data sources, so we have something to visualize</li>
-             <li>Creating a dashboard that uses that datasource</li>
-             <li>Setting up basic Alerting</li>
-         </ul>
-        </p>
+        <p>In this tutorial, we'll teach you how to use Grafana Cloud Synthetic Monitoring to check on your website,
+            and alert you if it goes down!</p>
 
-        <h2>Step 1: Install a plugin</h2>
+        <h2>Step 1: Create a Synthetic Monitoring Check</h2>
 
-        <p>We'll use the <em>Business News</em> plugin.</p>
+        <p>We'll first need to create a check to make sure the website is OK<p>
 
-        <span id="install-plugin" class="interactive" data-objectives="has-plugin:volkovlabs-rss-datasource" data-requirements="navmenu-open" data-targetaction="sequence" data-reftarget="span#install-plugin"> 
-            <ul>
-              <!--
-              <li class="interactive" data-targetaction="multistep">
-                <span class="interactive" data-requirements="navmenu-open"
-                  data-reftarget="a[data-testid='data-testid Nav menu item'][href='/admin/plugins']"
-                  data-targetaction="highlight"></span>
-                <span class="interactive" data-reftarget="a[href='/plugins']" data-targetaction="highlight"></span>
-                <span class="interactive" data-reftarget="input[type='text']" data-targetaction="formfill" data-targetvalue="Business News"></span>
-                Do a 3 Step Dance Just Because
-              </li>
-              -->
-            
-              <li class="interactive" data-requirements="navmenu-open"
-                  data-reftarget="a[data-testid='data-testid Nav menu item'][href='/admin/plugins']"
-                  data-targetaction='highlight'>
-                Click Administration &gt; Plugins &amp; Data in the left-side menu.</li>
-
-              <li class="interactive" data-reftarget="a[href='/plugins']" data-targetaction='highlight'>
-                  Click the Plugins button
-              </li>
-
-              <li class="interactive" data-reftarget="input[type='text']" data-targetaction='formfill' data-targetvalue='Business News'>
-                 Use the search bar to search for "Business News" (the plugin we'll be using)
-              </li>
-
-              <li class="interactive" data-reftarget="a[href='/plugins/volkovlabs-rss-datasource']" data-targetaction='highlight'>
-                Click the Business News button that appears.
-              </li>
-
-              <li 
-                  class='interactive' 
-                  data-hint="You'll need to be logged in, and an administrator"
-                  data-requirements="is-admin"
-                  data-reftarget='Install' 
-                  data-targetaction='button'>
-                Click the Install Button
-              </li>
-            </ul>
-        </span>    
-        
-        <h2>Step 2: Create a Datasource</h2>
-
-        <p>A datasource lets us specify which feed we want to use, so we can query it in a dashboard.</p>
-
-        <span id="create-datasource" 
+        <span id="sm-check-create" 
             class="interactive" 
+            data-objectives="has-plugin:volkovlabs-rss-datasource" 
             data-targetaction="sequence" 
-            data-reftarget="span#create-datasource"
-            data-requirements="navmenu-open,has-plugin:volkovlabs-rss-datasource"
-            data-objectives="has-datasource:volkovlabs-rss-datasource"> 
-            <ul>
-              <!-- Highlight a menu item and click it -->
+            data-reftarget="span#sm-check-create"> 
+            <ul>            
               <li class="interactive" 
-                  data-reftarget="a[data-testid='data-testid Nav menu item'][href='/connections']"
+                  data-reftarget="a[href='/a/grafana-synthetic-monitoring-app/checks']" 
                   data-targetaction='highlight'>
-                Click Connections in the left-side menu.</li>
-              <li class="interactive" data-reftarget="input[type='text']"
-                data-targetaction='formfill' data-targetvalue='Business News'>
-                Enter Business News in the search bar.</li>
+                  Click Testing &amp; Synthetics &gt; Synthetics &gt; Checks in the Nav Bar
+              </li>
+
+              <li class="interactive" data-reftarget="Create Check" data-targetaction="button">
+                Click the "Create Check" button that appears.
+              </li>
+
+              <li class="interactive" data-targetaction="highlight"
+                  data-reftarget="a[href='/a/grafana-synthetic-monitoring-app/checks/new/api-endpoint']">
+                  Click the API Endpoint button
+              </li>
+
+              <li class="interactive" data-targetaction="formfill"
+                  data-reftarget="input[id='check-editor-job-input']" data-targetvalue="My Website Check">
+                  Choose a Job Name
+              </li>
+
+              <li class="interactive" data-targetaction="formfill"
+                  data-reftarget="input[id='_rm_']" data-targetvalue="https://grafana.com/">
+                  Fill in an endpoint (e.g. https://grafana.com/)
+              </li>
+
+              <li class="interactive" data-targetaction="button"
+                  data-reftarget="Uptime">
+                  Click the Uptiime button to proceed to the next step
+              </li>
+
+              <li class="interactive" data-targetaction="button"
+                  data-reftarget="Labels">
+                  For simple websites, you can take the defaults.  Customize anything needed,
+                  then hit the Labels button.
+              </li>
+
+              <li class="interactive" data-targetaction="button"
+                  data-reftarget="Execution">
+                 Apply any labels if you want any, but none is OK.  Hit the Execution button next.
+              </li>
+
               <li class="interactive" 
-                  data-reftarget="a[href='/connections/datasources/volkovlabs-rss-datasource']"
-                  data-targetaction='highlight'>
-                Click Business News data source.</li>
-              <li class="interactive"
-                  data-reftarget="Add new data source"
-                  data-targetaction='button'>
-                Click Add new data source in the upper right.
+                  data-targetaction="formfill" 
+                  data-reftarget="input[id='header-AMER']"
+                  data-targetvalue="true">
+                Choose your execution locations.  "Do it" chooses just America.
               </li>
-              <li class="interactive"
-                  data-reftarget="input[id='basic-settings-name']"
-                  data-targetaction='formfill' data-targetvalue='Reddit /r/grafana'>
-                Name the data source "Reddit /r/grafana"
+
+              <li class="interactive" data-targetaction="button"
+                  data-reftarget="Alerting">
+                 Review and customize any other settings you like, then hit the Alerting button at 
+                the bottom
               </li>
-              <li class="interactive"
-                  data-reftarget="input[placeholder='https://feed']"
-                  data-targetaction="formfill" data-targetvalue="https://www.reddit.com/r/grafana/.rss">
-                Input the feed URL, which is <pre>https://www.reddit.com/r/grafana/.rss</pre>
+
+              <li class="interactive" data-targetaction="formfill"
+                  data-reftarget="input[id='alert-ProbeFailedExecutionsTooHigh']"
+                  data-targetvalue="true">
+                Check the box to alert if at least one execution fails.
               </li>
-              <li class="interactive"
-                  data-reftarget="Save & Test"
-                  data-targetaction="button">
-                Click "Save &amp Test" to save the data source.
+
+              <li class="interactive" data-targetaction="button"
+                  data-reftarget="Save">
+                Click Save
               </li>
             </ul>
         </span>    
-                
-        <h2>Step 3: Create a Dashboard</h2>
-
-        <p>In this section, we'll use the datasource we created to create a visualization.</p>
         
-        <span id="create-dashboard" 
-              class='interactive' 
-              data-targetaction='sequence' 
-              data-reftarget="span#create-dashboard"
-              data-requirements="has-datasource:volkovlabs-rss-datasource">
-            <ul>
-              <li class="interactive" 
-                  data-reftarget="a[data-testid='data-testid Nav menu item'][href='/dashboards']"
-                  data-targetaction='highlight'>
-                Click Dashboards in the left-side menu.</li>
-              <li class="interactive"
-                  data-reftarget="/dashboard/new"
-                  data-targetaction='navigate'>
-                  Click the New > Dashboard button"
-              </li>
-
-              <li class="interactive" data-targetaction="multistep">
-                 <span class="interactive" data-targetaction="button" data-reftarget="Add Visualization"></span>
-                 <span class="interactive" data-targetaction="button" data-reftarget="Business News"></span>
-                  Click "Add Visualization", Select the Business News/Reddit /r/grafana option.
-              </li>
-              <!--
-              <li class="interactive" data-targetaction="button" data-reftarget="Add Visualization">
-                Click "Add Visualization", 
-              </li>
-              <li class="interactive" data-targetaction="button" data-reftarget="Business News">
-                Select the Business News/Reddit /r/grafana option.
-              </li>
-              -->
-
-              <li class="interactive" data-targetaction="multistep">
-                <span class="interactive"
-                  data-reftarget='button[data-testid="data-testid toggle-viz-picker"]'
-                  data-targetaction="highlight"></span>
-                <span class="interactive"
-                  data-reftarget='div[aria-label="Plugin visualization item Table"]'
-                  data-targetaction="highlight"></span>
-                Click on the Visualization type, Search for "Table", Click Table.
-              </li>
-
-              <!--
-              <li class="interactive"
-                  data-reftarget='button[data-testid="data-testid toggle-viz-picker"]'
-                  data-targetaction='highlight'>
-                  Click on the Visualization type
-              </li>
-              <li>
-                  Search for "Table"
-              </li>
-              <li class="interactive"
-                  data-reftarget='div[data-test-id="Plugin visualization item Table"]'
-                  data-targetaction='highlight'>
-                  Click Table
-              </li>
-              -->
-
-              <li class="interactive" data-targetaction="multistep">
-                <span class="interactive" data-reftarget="Save Dashboard" data-targetaction="button"></span>
-                <span class="interactive" data-reftarget='input[aria-label="Save dashboard title field"]' 
-                  data-targetaction="formfill" data-targetvalue="Grafana News"></span>
-                <span class="interactive" data-reftarget="Save" data-targetaction="button"></span>
-                  Click Save Dashboard, name the dashboard "Grafana News" and click Save.
-              </li>
-
-             <!--
-              <li class="interactive" data-reftarget="Save Dashboard" data-targetaction="button">
-                 Click Save Dashboard
-              </li>
-              <li class="interactive" data-reftarget='input[aria-label="Save dashboard title field"]' 
-                  data-targetaction="formfill" data-targetvalue="Grafana News">
-                  Name the dashboard "Grafana News"
-              </li>
-
-              <li class="interactive" data-reftarget="Save" data-targetaction="button">
-                  Click Save
-              </li>
-            -->
-            </ul>
-        </span>
-
-        <p>That's it! You've got a basic dashboard.</p>
-        
+        <p>Congratulations!  You've just created your first synthetic check!</p>            
     </body>
 </html>
 
